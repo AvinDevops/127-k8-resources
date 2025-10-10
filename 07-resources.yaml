@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: resources
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      #this is soft limit means min
+      requests: 
+        memory: "128Mi"
+        cpu: "100m"
+      # this hard means max, max can be same as min or more than min  
+      limits: 
+        memory: "128Mi"
+        cpu: "100m"
