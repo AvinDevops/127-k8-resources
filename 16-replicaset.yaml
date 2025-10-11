@@ -1,0 +1,25 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: nginx-rps
+  # these labels belongs to replicaset resource
+  labels:
+    app: nginx
+    tier: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+     app: nginx
+     tier: web
+  # below is pod definition
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: web
+        project: test-project
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
