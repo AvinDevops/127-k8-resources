@@ -37,7 +37,7 @@ metadata:
     purpose: ebs-static
     project: expense
 spec:
-  continers:
+  containers:
   - name: nginx
     image: nginx
     volumeMounts:
