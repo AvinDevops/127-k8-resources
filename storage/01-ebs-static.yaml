@@ -14,19 +14,19 @@ spec:
     volumeHandle: vol-0229db1c52582ea0a #we need to give volume id
 
 ---
-# # Persistent Volume Claim
-# kind: PersistentVolumeClaim
-# apiVersion: v1
-# metadata: 
-#   name: ebs-static-claim
-# spec:
-#   storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
-#   volumeName: ebs-static
-#   accessModes:
-#   - ReadWriteOnce
-#   resources:
-#     requests:
-#       storage: 5Gi
+# Persistent Volume Claim
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata: 
+  name: ebs-static-claim
+spec:
+  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  volumeName: ebs-static
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
 # ---
 # # Pod is using claim
 # kind: Pod
